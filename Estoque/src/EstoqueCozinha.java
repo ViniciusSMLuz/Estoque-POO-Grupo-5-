@@ -4,10 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 import Classes.*; 
 
-    public class EstoqueCozinha {
+    public class estoqueCozinha {
         private Map<String, Integer> estoque;
     
-        public EstoqueCozinha() {
+        public estoqueCozinha() {
             estoque = new HashMap<>();
         }
     
@@ -34,7 +34,7 @@ import Classes.*;
         }
     
         public static void main(String[] args) {
-            EstoqueCozinha estoque = new EstoqueCozinha();
+            estoqueCozinha estoque = new estoqueCozinha();
             
             // Adicionar ingredientes ao estoque
             estoque.adicionarIngrediente("Sal", 500);
