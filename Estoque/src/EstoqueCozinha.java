@@ -5,12 +5,12 @@ import java.util.Map;
 import Classes.*; 
 import java.util.Scanner;
 
-public class estoqueCozinha {
+public class EstoqueCozinha {
     private Map<String, Integer> estoque;
     private Map<String, Integer> adicoesPendentes;
     private Map<String, Integer> atualizacoesPendentes;
 
-    public estoqueCozinha() {
+    public EstoqueCozinha() {
         estoque = new HashMap<>();
         adicoesPendentes = new HashMap<>();
         atualizacoesPendentes = new HashMap<>();
@@ -59,14 +59,14 @@ public class estoqueCozinha {
     }
 
     public static void main(String[] args) {
-        estoqueCozinha estoque = new estoqueCozinha();
+        EstoqueCozinha estoque = new EstoqueCozinha();
 
         while (true) {
             String opcaoStr = JOptionPane.showInputDialog(null,
                     "----- Menu -----\n" +
-                    "1. Adicionar ingrediente\n" +
-                    "2. Verificar disponibilidade de um ingrediente\n" +
-                    "3. Atualizar quantidade de um ingrediente\n" +
+                    "1. Adicionar ingredientes\n" +
+                    "2. Verificar a disponibilidade de um ingrediente\n" +
+                    "3. Atualizar a quantidade de um ingrediente\n" +
                     "4. Sair\n\n" +
                     "Escolha uma opção:");
 
@@ -82,7 +82,7 @@ public class estoqueCozinha {
                 String quantidadeStr = JOptionPane.showInputDialog("Digite a quantidade a ser adicionada:");
                 int quantidade = Integer.parseInt(quantidadeStr);
                 estoque.adicionarIngrediente(ingrediente, quantidade);
-                JOptionPane.showMessageDialog(null, "Ingrediente adicionado com sucesso!");
+                JOptionPane.showMessageDialog(null, "Ingrediente foi adicionado com sucesso!");
             } else if (opcao == 2) {
                 String ingrediente = JOptionPane.showInputDialog("Digite o nome do ingrediente:");
                 String quantidadeStr = JOptionPane.showInputDialog("Digite a quantidade requerida:");
@@ -97,7 +97,7 @@ public class estoqueCozinha {
             } else if (opcao == 4) {
                 break;
             } else {
-                JOptionPane.showMessageDialog(null, "Opção inválida. Digite novamente.");
+                JOptionPane.showMessageDialog(null, "Opção inválida, digite novamente!");
             }
         }
 
