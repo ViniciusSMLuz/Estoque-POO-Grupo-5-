@@ -4,6 +4,7 @@ import java.util.UUID;
 public class Produto {
     private String idProduto;
     private String nomeProduto;
+    private String unidadeDeMedida;
     private int quantidadeProduto;
 
     public Produto(){
@@ -21,6 +22,14 @@ public class Produto {
         return quantidadeProduto;
     }
 
+    public String getUnidadeDeMedida() {
+        return unidadeDeMedida;
+    }
+
+    public void setUnidadeDeMedida(String unidadeDeMedida) {
+        this.unidadeDeMedida = unidadeDeMedida;
+    }
+    
     public void setNomeProduto(String nomeProduto) {
         this.nomeProduto = nomeProduto;
     }
