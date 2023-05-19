@@ -29,13 +29,22 @@ public class Produto {
     public void setUnidadeDeMedida(String unidadeDeMedida) {
         this.unidadeDeMedida = unidadeDeMedida;
     }
-    
+
     public void setNomeProduto(String nomeProduto) {
         this.nomeProduto = nomeProduto;
     }
 
     public void setQuantidadeProduto(int quantidadeProduto) {
         this.quantidadeProduto = quantidadeProduto;
+    }
+
+    @Override
+    public String toString() {
+        String aux = "";
+        aux += "Nome do Produto: " + getNomeProduto() +"\n";
+        aux += "Unidade de Medida: " + getUnidadeDeMedida() +"\n";
+        aux += "Quantidade disponível: " + getQuantidadeProduto() + " " + getUnidadeDeMedida() + "\n";    
+        return aux;
     }
 
 }

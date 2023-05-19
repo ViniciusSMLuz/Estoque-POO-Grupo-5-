@@ -14,9 +14,11 @@ public class App {
                 System.out.println(("1 - sair\n2 - listar"));
                 menu = teclado.nextInt();
                     if(menu == 2){
-                        System.out.println(estoque);
-                    }else{
+                        listarProduto.listar(estoque);
+                    }else if (menu != 1){
                          estoque.add(cadastrarProduto.cadastrar(estoque));
+                    }else if(menu == 3){
+
                     }
                    
             } 
