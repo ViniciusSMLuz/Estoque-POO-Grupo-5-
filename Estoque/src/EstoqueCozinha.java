@@ -1,9 +1,7 @@
 import javax.swing.JOptionPane;
-import java.util.*;
 import java.util.HashMap;
 import java.util.Map;
 import Classes.*; 
-import java.util.Scanner;
 
 public class EstoqueCozinha {
     private Map<String, Integer> estoque;
@@ -83,17 +81,20 @@ public class EstoqueCozinha {
                 int quantidade = Integer.parseInt(quantidadeStr);
                 estoque.adicionarIngrediente(ingrediente, quantidade);
                 JOptionPane.showMessageDialog(null, "Ingrediente foi adicionado com sucesso!");
+
             } else if (opcao == 2) {
                 String ingrediente = JOptionPane.showInputDialog("Digite o nome do ingrediente:");
                 String quantidadeStr = JOptionPane.showInputDialog("Digite a quantidade requerida:");
                 int quantidadeRequerida = Integer.parseInt(quantidadeStr);
                 estoque.verificarDisponibilidade(ingrediente, quantidadeRequerida);
+
             } else if (opcao == 3) {
                 String ingrediente = JOptionPane.showInputDialog("Digite o nome do ingrediente:");
                 String novaQuantidadeStr = JOptionPane.showInputDialog("Digite a nova quantidade:");
                 int novaQuantidade = Integer.parseInt(novaQuantidadeStr);
                 estoque.atualizarQuantidade(ingrediente, novaQuantidade);
                 JOptionPane.showMessageDialog(null, "Quantidade atualizada com sucesso!");
+
             } else if (opcao == 4) {
                 break;
             } else {
