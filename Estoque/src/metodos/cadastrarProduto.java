@@ -5,7 +5,7 @@ import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
 
 public class cadastrarProduto {
-    
+      
     public Produto cadastrar(ArrayList<Produto> estoque){
         Produto produto = new Produto();
         boolean teste = false;
