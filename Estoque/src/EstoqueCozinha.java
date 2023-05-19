@@ -1,5 +1,5 @@
+import javax.swing.JOptionPane;
 import java.util.*;
-import static javax.swing.JOptionPane.*;
 import java.util.HashMap;
 import java.util.Map;
 import Classes.*; 
@@ -60,55 +60,47 @@ public class estoqueCozinha {
 
     public static void main(String[] args) {
         estoqueCozinha estoque = new estoqueCozinha();
-        Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("----- Menu -----");
-            System.out.println("1. Adicionar ingrediente");
-            System.out.println("2. Verificar disponibilidade de um ingrediente");
-            System.out.println("3. Atualizar quantidade de um ingrediente");
-            System.out.println("4. Sair");
+            String opcaoStr = JOptionPane.showInputDialog(null,
+                    "----- Menu -----\n" +
+                    "1. Adicionar ingrediente\n" +
+                    "2. Verificar disponibilidade de um ingrediente\n" +
+                    "3. Atualizar quantidade de um ingrediente\n" +
+                    "4. Sair\n\n" +
+                    "Escolha uma opção:");
 
-            System.out.print("Escolha uma opção: ");
-            int opcao = scanner.nextInt();
-            scanner.nextLine(); // Limpar o buffer do scanner
+            int opcao;
+            try {
+                opcao = Integer.parseInt(opcaoStr);
+            } catch (NumberFormatException e) {
+                opcao = 0;
+            }
 
             if (opcao == 1) {
-                System.out.print("Digite o nome do ingrediente: ");
-                String ingrediente = scanner.nextLine();
-                System.out.print("Digite a quantidade a ser adicionada: ");
-                int quantidade = scanner.nextInt();
-                scanner.nextLine(); // Limpar o buffer do scanner
+                String ingrediente = JOptionPane.showInputDialog("Digite o nome do ingrediente:");
+                String quantidadeStr = JOptionPane.showInputDialog("Digite a quantidade a ser adicionada:");
+                int quantidade = Integer.parseInt(quantidadeStr);
                 estoque.adicionarIngrediente(ingrediente, quantidade);
-                System.out.println("Ingrediente adicionado com sucesso!");
-
-
+                JOptionPane.showMessageDialog(null, "Ingrediente adicionado com sucesso!");
             } else if (opcao == 2) {
-                System.out.print("Digite o nome do ingrediente: ");
-                String ingrediente = scanner.nextLine();
-                System.out.print("Digite a quantidade requerida: ");
-                int quantidadeRequerida = scanner.nextInt();
-                scanner.nextLine(); // Limpar o buffer do scanner
+                String ingrediente = JOptionPane.showInputDialog("Digite o nome do ingrediente:");
+                String quantidadeStr = JOptionPane.showInputDialog("Digite a quantidade requerida:");
+                int quantidadeRequerida = Integer.parseInt(quantidadeStr);
                 estoque.verificarDisponibilidade(ingrediente, quantidadeRequerida);
-                
             } else if (opcao == 3) {
-                System.out.print("Digite o nome do ingrediente: ");
-                String ingrediente = scanner.nextLine();
-                System.out.print("Digite a nova quantidade: ");
-                int novaQuantidade = scanner.nextInt();
-                scanner.nextLine(); // Limpar o buffer do scanner
+                String ingrediente = JOptionPane.showInputDialog("Digite o nome do ingrediente:");
+                String novaQuantidadeStr = JOptionPane.showInputDialog("Digite a nova quantidade:");
+                int novaQuantidade = Integer.parseInt(novaQuantidadeStr);
                 estoque.atualizarQuantidade(ingrediente, novaQuantidade);
-                System.out.println("Quantidade atualizada com sucesso!");
+                JOptionPane.showMessageDialog(null, "Quantidade atualizada com sucesso!");
             } else if (opcao == 4) {
                 break;
             } else {
-                System.out.println("Opção inválida. Digite novamente.");
+                JOptionPane.showMessageDialog(null, "Opção inválida. Digite novamente.");
             }
-
-            System.out.println();
         }
 
         estoque.aplicarAlteracoesPendentes();
-        scanner.close();
     }
 }
