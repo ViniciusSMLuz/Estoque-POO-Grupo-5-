@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class cadastrarProduto {
       
-    public Produto cadastrar(ArrayList<Produto> estoque){
+    public static Produto cadastrar(ArrayList<Produto> estoque){
         Produto produto = new Produto();
         boolean teste = false;
             while(teste == false){
@@ -23,7 +23,7 @@ public class cadastrarProduto {
                     }
                 teste = true;
             }
-
+            produto.setUnidadeDeMedida(showInputDialog(null, "Digite a unidade de medida do produto", "CADASTRO", INFORMATION_MESSAGE));
             teste = false;
             while(teste == false){
                 try {
