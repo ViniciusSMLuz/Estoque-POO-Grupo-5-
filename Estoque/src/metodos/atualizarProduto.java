@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class atualizarProduto {
 
-    public void atualizar(ArrayList<Produto> estoque) {
+    public static void atualizar(ArrayList<Produto> estoque) {
         boolean produtoEncontrado = false;
         String nomeProduto = showInputDialog(null, "Digite o nome do Produto a ser atualizado", "ATUALIZAÇÃO",
                 INFORMATION_MESSAGE);
