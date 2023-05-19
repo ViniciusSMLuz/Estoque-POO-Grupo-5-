@@ -9,9 +9,9 @@ public class App {
     public static void main(String[] args) throws Exception {
         ArrayList <Produto> estoque = new ArrayList<>();
         Scanner teclado = new Scanner(System.in);
-        int menu;
+        int menu = 0;
             while(menu != 1){
-                System.out.println(("1 - sair\n2 - listar"););
+                System.out.println(("1 - sair\n2 - listar"));
                 menu = teclado.nextInt();
                     if(menu == 2){
                         System.out.println(estoque);
