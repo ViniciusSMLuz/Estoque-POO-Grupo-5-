@@ -2,7 +2,7 @@ package metodos;
 
 import Classes.*;
 import static javax.swing.JOptionPane.*;
-import static java.lang.Integer.parseInt;
+import static java.lang.Double.parseDouble;
 import java.util.ArrayList;
 
 public class atualizarProduto {
@@ -14,7 +14,7 @@ public class atualizarProduto {
 
         for (Produto produto : estoque) {
             if (produto.getNomeProduto().equals(nomeProduto)) {
-                int novaQuantidade = parseInt(showInputDialog(null, "Digite a nova quantidade disponível no estoque",
+                Double novaQuantidade = parseDouble(showInputDialog(null, "Digite a nova quantidade disponível no estoque",
                         "Atualização", INFORMATION_MESSAGE));
                 produto.setQuantidadeProduto(novaQuantidade);
                 showMessageDialog(null, "Quantidade do produto atualizada com sucesso!", "Atualização",

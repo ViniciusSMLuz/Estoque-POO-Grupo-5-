@@ -1,7 +1,7 @@
 package metodos;
 import Classes.*;
 import static javax.swing.JOptionPane.*;
-import static java.lang.Integer.parseInt;
+import static java.lang.Double.parseDouble;
 import java.util.ArrayList;
 
 public class cadastrarProduto {
@@ -24,7 +24,7 @@ public class cadastrarProduto {
             teste = false;
             while(teste == false){
                 try {
-                    produto.setQuantidadeProduto(parseInt(showInputDialog(null, "Digite a quantidade disponível no estoque", "Cadastro", INFORMATION_MESSAGE)));
+                    produto.setQuantidadeProduto(parseDouble(showInputDialog(null, "Digite a quantidade disponível no estoque", "Cadastro", INFORMATION_MESSAGE)));
                 } catch (Exception e) {
                     showMessageDialog(null, "ERRO: " + e + "\nTente o processo novamente", "Cadastro", ERROR_MESSAGE);            
                 }
