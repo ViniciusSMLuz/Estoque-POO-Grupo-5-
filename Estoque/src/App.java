@@ -6,8 +6,8 @@ import metodos.*;
 
 public class App { 
     ArrayList <Produto> estoque = new ArrayList<>();
-    public static void main(String[] args) throws Exception {
-        ArrayList <Produto> estoque = new ArrayList<>();
+    
+    public void Menu(){
         Scanner teclado = new Scanner(System.in);
         int menu = -1;
             while(menu != 0){

@@ -10,18 +10,15 @@ public class cadastrarProduto {
         Produto produto = new Produto();
         boolean teste = false;
             while(teste == false){
-                produto.setNomeProduto(showInputDialog(null, "Digite o nome do Produto a ser cadastrado", "CADASTRO", INFORMATION_MESSAGE));
-                    if(!estoque.isEmpty()){
-                        for(Produto produtoTeste : estoque){
-                            if(produtoTeste.getNomeProduto().equals(produto.getNomeProduto())){
-                                showMessageDialog(null, "Produto já Cadastrado!", "Cadastro", ERROR_MESSAGE);
-                                teste = false;
-                            }
-                        }
-                    }else{
-                        teste = true;
-                    }
                 teste = true;
+                produto.setNomeProduto(showInputDialog(null, "Digite o nome do Produto a ser cadastrado", "CADASTRO", INFORMATION_MESSAGE));
+                    for(Produto produtoTeste : estoque){
+                        if(produto.getNomeProduto().equalsIgnoreCase(produtoTeste.getNomeProduto())){
+                            showMessageDialog(null, "Produto já cadastrado ", "Cadastro", ERROR_MESSAGE);
+                            teste = false;
+                            break;
+                        }
+                    }
             }
             produto.setUnidadeDeMedida(showInputDialog(null, "Digite a unidade de medida do produto", "CADASTRO", INFORMATION_MESSAGE));
             teste = false;
