@@ -11,7 +11,7 @@ public class cadastrarProduto {
         boolean teste = false;
             while(teste == false){
                 teste = true;
-                produto.setNomeProduto(showInputDialog(null, "Digite o nome do Produto a ser cadastrado", "CADASTRO", INFORMATION_MESSAGE));
+                produto.setNomeProduto(showInputDialog(null, "Digite o nome do Produto a ser cadastrado", "CADASTRO", INFORMATION_MESSAGE).toString().toLowerCase());
                     for(Produto produtoTeste : estoque){
                         if(produto.getNomeProduto().equalsIgnoreCase(produtoTeste.getNomeProduto())){
                             showMessageDialog(null, "Produto já cadastrado ", "Cadastro", ERROR_MESSAGE);
