@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class cadastrarProduto {
       
-    public static Produto cadastrar(ArrayList<Produto> estoque){
+    public void  cadastrar(ArrayList<Produto> estoque){
         Produto produto = new Produto();
         boolean teste = false;
             while(teste == false){
@@ -30,7 +30,8 @@ public class cadastrarProduto {
                 }
                 teste = true;
             }
-        return produto;
+       estoque.add(produto);
+        
     }
 
 }
