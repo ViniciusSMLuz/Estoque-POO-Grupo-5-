@@ -29,6 +29,8 @@ public class App {
                             for(PratoMenu prato : this.menu){
                                 System.out.println(prato);
                             }
+                        }else if(subMenu == 3){
+                            disponibilidadeDeProdutos.atualizar(estoque, this.menu);
                         }
                     
                 }
