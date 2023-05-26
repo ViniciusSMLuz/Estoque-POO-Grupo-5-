@@ -1,6 +1,8 @@
 package Classes;
 import java.util.ArrayList;
 
+import metodos.listarProduto;
+
 public class PratoMenu {
     
     private String idPratoMenu;
@@ -56,6 +58,18 @@ public class PratoMenu {
     
     }
 
-
+    @Override
+    public String toString() {
+        String aux = "";
+        aux += "Nome: " + getNomePratoMenu() + "\n";
+        aux += "Descrição: " + getDescricaoPratoMenu() + "\n";
+        aux += "Ingredientes: ";
+        for(Produto produto : ingredientesPratoMenu){
+            aux += produto.getNomeProduto() + ",";
+        }
+        aux += "\n";
+        aux += "Preço: " + getPrecoPratoMenu() + "\n";
+        return aux;
+    }
 
 }

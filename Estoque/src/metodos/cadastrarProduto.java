@@ -23,12 +23,14 @@ public class cadastrarProduto {
             produto.setUnidadeDeMedida(showInputDialog(null, "Digite a unidade de medida do produto", "CADASTRO", INFORMATION_MESSAGE));
             teste = false;
             while(teste == false){
+                teste = true;
                 try {
                     produto.setQuantidadeProduto(parseDouble(showInputDialog(null, "Digite a quantidade disponível no estoque", "Cadastro", INFORMATION_MESSAGE)));
                 } catch (Exception e) {
-                    showMessageDialog(null, "ERRO: " + e + "\nTente o processo novamente", "Cadastro", ERROR_MESSAGE);            
+                    showMessageDialog(null, "ERRO: " + e + "\nTente o processo novamente", "Cadastro", ERROR_MESSAGE);
+                    teste = false;            
                 }
-                teste = true;
+               
             }
        estoque.add(produto);
         

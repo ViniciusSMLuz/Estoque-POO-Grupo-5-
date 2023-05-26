@@ -14,6 +14,7 @@ public class listarProduto {
              StringBuffer listaProduto = new StringBuffer();
                 for (Produto produto : estoque) {
                     listaProduto.append(produto);
+                    listaProduto.append("\n");
                 }
 
                 showConfirmDialog(null, "LISTA DE PRODUTOS\n" + listaProduto.toString(), "ESTOQUE",INFORMATION_MESSAGE);

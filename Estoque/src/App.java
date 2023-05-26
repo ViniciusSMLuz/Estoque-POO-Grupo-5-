@@ -21,10 +21,14 @@ public class App {
             if(menu == 1){
                 int subMenu = -1;
                 while(subMenu != 0){
-                    System.out.println(("1 - cadastra\n2 - listar\n3 - atualizar\n4 - deletar\n0 - sair"));
+                    System.out.println(("1 - cadastra\n2 - listar\n0 - sair"));
                     subMenu = teclado.nextInt();
                         if(subMenu == 1){
                             cpm.cadastrar(estoque, this.menu);
+                        }else if(subMenu == 2){
+                            for(PratoMenu prato : this.menu){
+                                System.out.println(prato);
+                            }
                         }
                     
                 }
