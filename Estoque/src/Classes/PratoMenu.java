@@ -1,8 +1,6 @@
 package Classes;
 import java.util.ArrayList;
 
-import metodos.listarProduto;
-
 public class PratoMenu {
     
     private String idPratoMenu;
@@ -26,6 +24,10 @@ public class PratoMenu {
 
     public ArrayList<Produto> getIngredientesPratoMenu() {
         return ingredientesPratoMenu;
+    }
+
+    public int getTamanhoIngredientesPratoMenu(){
+        return ingredientesPratoMenu.size();
     }
 
     public double getPrecoPratoMenu() {
@@ -55,7 +57,6 @@ public class PratoMenu {
     
     public void removeIngredientesPratoMenu(Produto produto) {
         ingredientesPratoMenu.remove(produto); 
-    
     }
 
     @Override
