@@ -1,3 +1,4 @@
+import static javax.swing.JOptionPane.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 import Classes.*;
@@ -15,19 +16,19 @@ public class App {
 
         int menu = -1;
         while(menu != 0){
-            System.out.println("1 - Menu Prato\n2 - Menu Estoque");
-            menu = teclado.nextInt();
+            String menuInput = showInputDialog("1 - Menu Prato\n2 - Menu Estoque\n0 - Sair");
+            menu = Integer.parseInt(menuInput);
             
             if(menu == 1){
                 int subMenu = -1;
                 while(subMenu != 0){
-                    System.out.println(("1 - cadastra\n2 - listar\n0 - sair"));
-                    subMenu = teclado.nextInt();
+                    String subMenuInput = showInputDialog("1 - Cadastrar\n2 - Listar\n0 - Sair");
+                    subMenu = Integer.parseInt(subMenuInput);
                         if(subMenu == 1){
                             cpm.cadastrar(estoque, this.menu);
                         }else if(subMenu == 2){
                             for(PratoMenu prato : this.menu){
-                                System.out.println(prato);
+                                showMessageDialog(null, prato, "Aviso", INFORMATION_MESSAGE);
                             }
                         }else if(subMenu == 3){
                             disponibilidadeDeProdutos.atualizar(estoque, this.menu);
@@ -38,8 +39,8 @@ public class App {
             }else if(menu == 2){
                 int subMenu = -1;
                 while(subMenu != 0){
-                    System.out.println(("1 - cadastra\n2 - listar\n3 - atualizar\n4 - deletar\n0 - sair"));
-                    subMenu = teclado.nextInt();
+                    String subMenuInput = showInputDialog("1 - Cadastrar\n2 - Listar\n3 - Atualizar\n4 - Deletar\n0 - Sair");
+                    subMenu = Integer.parseInt(subMenuInput);
                         if(subMenu == 1){
                             cp.cadastrar(estoque);
                         }else if (subMenu == 2){
@@ -52,10 +53,10 @@ public class App {
                 }
 
             }else if (menu == 0){
-                System.out.println("Operação Encerrada!");
+                showMessageDialog(null, "Operação Encerrada", "Aviso", INFORMATION_MESSAGE);
             
             }else if(menu < 0 || menu > 3){
-                System.out.println("Entrada Inválida");
+                showMessageDialog(null, "Entrada Inválida", "Aviso", INFORMATION_MESSAGE);
             }
         }
 
