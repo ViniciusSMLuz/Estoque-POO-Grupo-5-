@@ -5,7 +5,8 @@ public class Produto {
     private String idProduto;
     private String nomeProduto;
     private String unidadeDeMedida;
-    private int quantidadeProduto;
+    private double quantidadeProduto;
+    private double quantidadePratoProduto;
 
     public Produto(){
         idProduto = UUID.randomUUID().toString();
@@ -18,7 +19,7 @@ public class Produto {
     public String getNomeProduto() {
         return nomeProduto;
     }
-    public int getQuantidadeProduto() {
+    public double getQuantidadeProduto() {
         return quantidadeProduto;
     }
 
@@ -26,16 +27,33 @@ public class Produto {
         return unidadeDeMedida;
     }
 
+    public double getQuantidadePratoProduto() {
+        return quantidadePratoProduto;
+    }
+
     public void setUnidadeDeMedida(String unidadeDeMedida) {
         this.unidadeDeMedida = unidadeDeMedida;
     }
-    
+
     public void setNomeProduto(String nomeProduto) {
         this.nomeProduto = nomeProduto;
     }
 
-    public void setQuantidadeProduto(int quantidadeProduto) {
+    public void setQuantidadeProduto(Double quantidadeProduto) {
         this.quantidadeProduto = quantidadeProduto;
+    }
+
+    public void setQuantidadePratoProduto(double quantidadePratoProduto) {
+        this.quantidadePratoProduto = quantidadePratoProduto;
+    }
+
+    @Override
+    public String toString() {
+        String aux = "";
+        aux += "Nome do Produto: " + getNomeProduto() +"\n";
+        aux += "Unidade de Medida: " + getUnidadeDeMedida() +"\n";
+        aux += "Quantidade disponível: " + getQuantidadeProduto() + " " + getUnidadeDeMedida() + "\n";    
+        return aux;
     }
 
 }

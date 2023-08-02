@@ -7,21 +7,19 @@ import java.util.ArrayList;
 
 public class listarProduto {
 
-    public void listar(ArrayList<Produto> listaProd) {
-        StringBuffer produto = new StringBuffer();
-        for (Produto estoque : listaProd) {
-            if (estoque instanceof Produto) {
-                produto.append(estoque.toString());
-            } else {
-
-            }
-        }
-        if (produto.length() > 0) {
-            showConfirmDialog(null, "Listando ingredientes do estoque\n" + produto.toString(), "Lista de ingredientes", DEFAULT_OPTION, INFORMATION_MESSAGE);
-        } else {
+    public static void listar(ArrayList<Produto> estoque) {
+        if(estoque.isEmpty()){
             showConfirmDialog(null, "Não há ingredientes", "Erro!", DEFAULT_OPTION, ERROR_MESSAGE);
-        }
+        }else{
+             StringBuffer listaProduto = new StringBuffer();
+                for (Produto produto : estoque) {
+                    listaProduto.append(produto);
+                    listaProduto.append("\n");
+                }
 
+                showConfirmDialog(null, "LISTA DE PRODUTOS\n" + listaProduto.toString(), "ESTOQUE",INFORMATION_MESSAGE);
+        }
+        
     }
 
     

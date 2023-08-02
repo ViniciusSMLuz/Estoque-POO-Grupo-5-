@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class deletarProduto {
 
-    public void deletar(ArrayList<Produto> estoque){
+    public static void deletar(ArrayList<Produto> estoque){
         
         String i = showInputDialog("Insira o nome do produto a ser removido");
 

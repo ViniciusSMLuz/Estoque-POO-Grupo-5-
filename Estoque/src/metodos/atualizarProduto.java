@@ -2,19 +2,19 @@ package metodos;
 
 import Classes.*;
 import static javax.swing.JOptionPane.*;
-import static java.lang.Integer.parseInt;
+import static java.lang.Double.parseDouble;
 import java.util.ArrayList;
 
 public class atualizarProduto {
 
-    public void atualizar(ArrayList<Produto> estoque) {
+    public static void atualizar(ArrayList<Produto> estoque) {
         boolean produtoEncontrado = false;
         String nomeProduto = showInputDialog(null, "Digite o nome do Produto a ser atualizado", "ATUALIZAÇÃO",
                 INFORMATION_MESSAGE);
 
         for (Produto produto : estoque) {
             if (produto.getNomeProduto().equals(nomeProduto)) {
-                int novaQuantidade = parseInt(showInputDialog(null, "Digite a nova quantidade disponível no estoque",
+                Double novaQuantidade = parseDouble(showInputDialog(null, "Digite a nova quantidade disponível no estoque",
                         "Atualização", INFORMATION_MESSAGE));
                 produto.setQuantidadeProduto(novaQuantidade);
                 showMessageDialog(null, "Quantidade do produto atualizada com sucesso!", "Atualização",
