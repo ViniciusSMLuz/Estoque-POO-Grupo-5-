@@ -1,12 +1,7 @@
-# Estoque-POO-Grupo-5-
-Sistema de automação de um restaurante, onde cada grupo é responsável pela implementação de um módulo do sistema. 
-----Meu grupo: 5, reponsável pelo estoque da cozinha----
-5. Módulo de Estoque:
-a. A classe Estoque representa o estoque de ingredientes do restaurante.
-b. Ela possui os atributos lista de ingredientes e quanHdade disponível para cada
-ingrediente.
-c. Possui métodos para adicionar ingredientes ao estoque, atualizar a quanHdade
-disponível de um ingrediente e verificar se um determinado ingrediente está
-disponível em quanHdade suficiente para um pedido.
-d. Essa classe é uHlizada pelo módulo Cozinheiro para verificar a disponibilidade dos
-ingredientes necessários
+Automation system for a restaurant, where each group is responsible for implementing a system module.
+----My group: 5, responsible for the kitchen inventory---- 
+5. Inventory module: 
+A. The Inventory class represents the restaurant's inventory of ingredients. 
+B. It has the attributes list of ingredients and quantity available for each ingredient. 
+C. It has methods for adding ingredients to inventory, updating the available quantity of an ingredient, and checking whether a certain ingredient is available in sufficient quantity for an order. 
+D. This class is used by the Cook module to check the availability of the necessary ingredients
